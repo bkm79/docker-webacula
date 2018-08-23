@@ -16,6 +16,7 @@ RUN apt-get update && \
     chown www-data:www-data -R /usr/share/webacula && chmod 777 -R /usr/share/webacula/data && \
     rm -rf /etc/nginx/sites-available/* && rm -rf /etc/nginx/sites-enabled/*
 
+ADD webacula/ /usr/share/webacula/
 ADD 10_make_tables.sh /usr/share/webacula/install/PostgreSql/
 ADD 20_acl_make_tables.sh /usr/share/webacula/install/PostgreSql/
 ADD config.ini /usr/share/webacula/application/
